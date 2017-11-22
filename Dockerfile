@@ -69,6 +69,6 @@ COPY settings.js /data/
 
 
 RUN chmod -R 777 /nodes
-
+USER 1001
 ENV NODE soapserver
 
