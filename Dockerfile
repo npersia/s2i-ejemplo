@@ -69,6 +69,11 @@ COPY settings.js /data/
 
 
 RUN chmod -R 777 /nodes
-USER 1001
+
+RUN chgrp -R 0 /usr/src/node-red && chmod -R g=u /usr/src/node-red
+RUN chgrp -R 0 /data && chmod -R g=u /data
+RUN chgrp -R 0 /nodes && chmod -R g=u /nodes
+
+
 ENV NODE soapserver
 
